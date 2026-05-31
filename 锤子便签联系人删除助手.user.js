@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         锤子便签联系人删除助手
 // @name:en      Smartisan Notes Contact Deleter
-// @namespace    https://github.com/hong525-gh/smartisan-notes-delete
+// @namespace    https://github.com/hong525-gh/smartisan-cloud-toolkit
 // @version      1.0.0
 // @description  批量删除锤子便签联系人：滚动收集全部联系人，勾选后通过模拟点击自动逐条删除。带速率限制与暂停/恢复。
 // @description:en  Bulk-delete Smartisan contacts: scroll-collect all contacts, select, then auto-click through the UI one by one. Rate-limited with pause/resume.
 // @author       hong525-gh
-// @homepageURL  https://github.com/hong525-gh/smartisan-notes-delete
-// @supportURL   https://github.com/hong525-gh/smartisan-notes-delete/issues
+// @homepageURL  https://github.com/hong525-gh/smartisan-cloud-toolkit
+// @supportURL   https://github.com/hong525-gh/smartisan-cloud-toolkit/issues
 // @match        *://cloud.smartisan.com/*
 // @include      *://cloud.smartisan.com/?from=snote*
 // @icon         https://cloud.smartisan.com/favicon.ico

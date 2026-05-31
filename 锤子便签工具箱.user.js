@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         锤子便签工具箱
 // @name:en      Smartisan Notes Toolkit
-// @namespace    https://github.com/hong525-gh/smartisan-notes-delete
+// @namespace    https://github.com/hong525-gh/smartisan-cloud-toolkit
 // @version      2.0.0
 // @description  锤子便签一站式工具：导出（ZIP / 独立 .md，含图片）+ 批量删除（模拟点击逐条删除，带速率限制）。
 // @description:en  Smartisan Notes all-in-one toolkit: export as ZIP / loose .md (with images) + bulk delete via simulated clicks with rate limiting.
 // @author       hong525-gh
-// @homepageURL  https://github.com/hong525-gh/smartisan-notes-delete
-// @supportURL   https://github.com/hong525-gh/smartisan-notes-delete/issues
+// @homepageURL  https://github.com/hong525-gh/smartisan-cloud-toolkit
+// @supportURL   https://github.com/hong525-gh/smartisan-cloud-toolkit/issues
 // @match        *://cloud.smartisan.com/*
 // @match        *://cloud.smartisan.com/apps/note/*
 // @match        *://note.smartisan.com/*
