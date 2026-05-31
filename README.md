@@ -1,52 +1,60 @@
 [中文版](README_zh.md) | English
 
-# Smartisan Notes Bulk Deleter (锤子便签批量删除助手)
+# Smartisan Notes Toolkit
 
-A Tampermonkey userscript for batch-deleting notes from Smartisan Cloud (cloud.smartisan.com).
+A collection of userscripts (Tampermonkey / Greasemonkey) for Smartisan Cloud (cloud.smartisan.com). Install via [Tampermonkey](https://www.tampermonkey.net/) or any compatible userscript manager.
 
-## Problem
+> The "Smartisan Notes Toolkit" script is based on [anyuxurl/smartisan-notes-export](https://github.com/anyuxurl/smartisan-notes-export).
 
-Smartisan Notes cloud app does not provide a batch-delete feature. Deleting hundreds of notes one-by-one through the UI is tedious and time-consuming.
+## Scripts
 
-## Solution
+### 1. Smartisan Notes Toolkit (Export + Delete)
 
-This userscript adds a floating action button to the Smartisan Notes page. It reads your notes from the browser's IndexedDB, presents a searchable selection modal, and then automates the deletion by clicking through the web app's own UI — ensuring the deletion is properly synced to the server.
+**File**: `锤子便签工具箱.user.js`
 
-## Features
+Combined export and bulk-delete functionality for the notes page (`#/notes`). Two floating buttons in the bottom-right corner:
 
-- Read all notes from local IndexedDB (no API calls needed)
-- Search and filter notes by title
-- Select notes individually, by folder, or select all
-- Configurable delay between deletions to avoid rate-limiting
-- Pause / Resume / Stop during deletion
-- Progress panel with real-time status
+| Button | Color | Feature |
+|---|---|---|
+| ⬇ | Green | Export notes (ZIP / loose .md with images) |
+| 🗑 | Red | Bulk-delete notes (simulated clicks, iframe only) |
 
-## Installation
+**Export**:
+- Export all as ZIP (custom STORE-mode ZIP builder, zero dependencies)
+- Custom export: select notes by category or list order
+- Image download with base64 inline support
+- Optional timestamps (modify time, create time)
+- Shift + Click the green button to quick-export all as ZIP
 
-1. Install [Tampermonkey](https://www.tampermonkey.net/) for your browser
-2. Open the [raw script](https://github.com/hong525/smartisan-notes-delete/raw/main/%E9%94%A4%E5%AD%90%E4%BE%BF%E7%AD%BE%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4%E5%8A%A9%E6%89%8B.user.js) — Tampermonkey will prompt to install
-3. Navigate to <https://cloud.smartisan.com/#/notes> and log in
-4. Click the red trash icon in the bottom-right corner
+**Delete**:
+- Reads notes from IndexedDB
+- Filter by category, search by title
+- Simulates clicks through the Smartisan UI one by one
+- Two-phase deletion: current category → auto-navigate to Trash → permanent delete
+- Pause / Resume / Stop controls
 
-## Usage
+**Install**: Install `锤子便签工具箱.user.js`, then visit <https://cloud.smartisan.com/?from=snote#/notes>.
 
-1. Click the red FAB → **Bulk Delete…**
-2. Search/filter notes, check the ones to delete
-3. Adjust the delay if needed (default: 4000 ms between deletions)
-4. Click **Delete Selected** → confirm → the script will click through the UI automatically
+---
 
-## How It Works
+### 2. Smartisan Notes Contact Deleter
 
-1. Reads notes from `_pouch_note` and `_pouch_folder` IndexedDB stores
-2. Presents a modal for selecting notes
-3. For each selected note: finds the note in the Smartisan sidebar, clicks it, clicks the delete button, confirms the dialog — all with configurable delays
+**File**: `锤子便签联系人删除助手.user.js`
 
-## Safety
+Bulk-delete contacts on the contacts page (`#/contacts`).
 
-- Default delay of 4 seconds between deletions to avoid rate-limiting
-- Extra 8-second rest every 5 deletions
-- Pause/Stop controls during deletion
-- Confirmation dialog before starting
+- Red FAB button, scroll-collects all contacts via virtual scrolling
+- Confirms then simulates clicks: select contact → Edit → Delete Contact → Confirm
+- Handles the virtual-scroll list automatically
+- Pause / Resume / Stop controls
+
+**Install**: Install `锤子便签联系人删除助手.user.js`, then visit <https://cloud.smartisan.com/?from=snote#/contacts>.
+
+---
+
+## Tested On
+
+- Google Chrome 148.0.7778.96 (Official Build) (64-bit) with Tampermonkey
 
 ## License
 

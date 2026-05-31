@@ -1,6 +1,11 @@
 # Reference files (private debugging info)
 full_page.html
 other_info.md
+other_info_for_contact.md
+contact_html.html
+
+# Generated / archived
+*.zip
 
 # OS
 .DS_Store
