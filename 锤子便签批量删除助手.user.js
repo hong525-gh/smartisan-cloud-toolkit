@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         锤子便签批量删除助手
 // @name:en     Smartisan Notes Bulk Deleter
-// @namespace   https://github.com/anyuxurl/smartisan-notes-delete
-// @version     1.1.0
+// @namespace   https://github.com/hong525-gh/smartisan-notes-delete
+// @version     1.0.0
 // @description  批量删除锤子便签：读取便签列表，勾选后通过模拟点击自动逐条删除。带速率限制，避免被标记为爬虫。
-// @author      hong525
+// @author      hong525-gh
+// @homepageURL https://github.com/hong525-gh/smartisan-notes-delete
+// @supportURL  https://github.com/hong525-gh/smartisan-notes-delete/issues
 // @match       *://cloud.smartisan.com/*
 // @match       *://note.smartisan.com/*
 // @match       *://yun.smartisan.com/*
