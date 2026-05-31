@@ -1,3 +1,5 @@
+[中文版](README_zh.md) | English
+
 # Smartisan Notes Bulk Deleter (锤子便签批量删除助手)
 
 A Tampermonkey userscript for batch-deleting notes from Smartisan Cloud (cloud.smartisan.com).
