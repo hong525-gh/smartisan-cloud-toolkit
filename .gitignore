@@ -1,0 +1,7 @@
+# Reference files (private debugging info)
+full_page.html
+other_info.md
+
+# OS
+.DS_Store
+Thumbs.db
